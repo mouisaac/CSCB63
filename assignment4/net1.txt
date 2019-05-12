@@ -1,0 +1,35 @@
+# This is the adjacency list for the graph
+#                 A
+#                / \
+#               D   B
+#                    \
+#                     C
+# The edges are directed, all arrows are downwards
+A -> B D
+B -> C
+---
+# A is independent, so we're storing 
+#   P(A = 1)
+A
+0.9
+---
+# D depends on A, so we're storing 
+#   P(D=1 | A=0)
+#   P(D=1 | A=1)
+D A
+0.3
+0.7
+---
+# B depends on A, so we're storing 
+#   P(B=1 | A=0)
+#   P(B=1 | A=1)
+B A
+0.5
+0.1
+---
+# C depends on B, so we're storing 
+#   P(C=1 | B=0)
+#   P(C=1 | B=1)
+C B
+0.5
+0.7

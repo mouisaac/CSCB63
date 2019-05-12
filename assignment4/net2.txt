@@ -1,0 +1,41 @@
+# This is the adjacency list for the graph
+#                 C
+#                / \
+#               S   R
+#                \ /
+#                 W
+# The edges are directed, all arrows are downwards
+C -> S R
+S -> W
+R -> W
+---
+# C is independent, so we're storing 
+#   P(C = 1)
+C
+0.5
+---
+# S depends on C, so we're storing 
+#   P(S=1 | C=0)
+#   P(S=1 | C=1)
+S C
+0.5
+0.1
+---
+# R depends on C, so we're storing 
+#   P(R=1 | C=0)
+#   P(R=1 | C=1)
+R C
+0.2
+0.8
+---
+# W depends on R and S, so we're storing 
+#   P(W=1 | R=0, S=0)
+#   P(W=1 | R=0, S=1)
+#   P(W=1 | R=1, S=0)
+#   P(W=1 | R=1, S=1)
+W R S
+0.01
+0.9
+0.9
+0.99
+---
